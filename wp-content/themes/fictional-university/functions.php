@@ -9,3 +9,12 @@ function university_assets(){
 }
 
 add_action('wp_enqueue_scripts', 'university_assets');
+
+function university_page_title(){
+    register_nav_menu('mainMenu', 'main Menu');
+    register_nav_menu('footerMenuOne', 'footer Menu one');
+    register_nav_menu('footerMenuTwo', 'footer Menu two');
+    add_theme_support('title-tag');
+}
+
+add_action('after_setup_theme', 'university_page_title');
